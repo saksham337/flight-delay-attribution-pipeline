@@ -108,3 +108,12 @@ Kimball-style star schema:
 - Add live aircraft tracking (OpenSky) for delay-propagation analysis
 - Orchestrate with Airflow; encode transformations as dbt models with tests
 - Build a claim-adjudication API on top of MART_FLIGHT_WEATHER
+- ## Orchestration
+## Orchestration
+An Airflow DAG (`dags/flight_pipeline_dag.py`) is included showing the
+intended production orchestration. It was not deployed in this proof of
+concept: the shared Snowflake environment enforces MFA and network-policy
+restrictions that block the programmatic authentication Airflow requires.
+Transformations were run manually as SQL (`scripts/pipeline.sql`) to keep
+the analytical timeline on track. Deploying the DAG against a properly
+provisioned service account is the first item in Future Enhancements.
