@@ -1,0 +1,17 @@
+name: capstone_flights
+version: "1.0.0"
+config-version: 2
+
+profile: capstone_flights
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+models:
+  capstone_flights:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts

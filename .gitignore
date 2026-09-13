@@ -1,0 +1,7 @@
+.dbt/
+credentials.txt
+data/
+*.csv
+*.csv.gz
+__pycache__/
+.ipynb_checkpoints/
