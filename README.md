@@ -1,7 +1,5 @@
 ﻿# Flight Delay Attribution Pipeline
-An end-to-end data engineering pipeline that cross-references airline-reported
-delay causes against independently-observed weather data to identify potential
-misattribution of flight delays.
+An end-to-end data engineering project using Snowflake and SQL to cross-reference airline-reported flight delay causes against independently observed weather data.
 Stack: Snowflake, SQL, Python, Meteostat API, BTS/DOT data
 ## The Problem
 When a US flight is delayed 15+ minutes, the operating airline classifies the
@@ -41,6 +39,10 @@ Meteostat Hourly Weather (5 stations, CSV.gz)
 -> Snowflake RAW: WEATHER_ATL/DFW/LAX/ORD/JFK
 -> FCT_WEATHER_OBSERVATION (airport-hour grain, adverse-weather flag)
 -> MART_FLIGHT_WEATHER
+
+<img width="2600" height="1800" alt="flight_delay_erd" src="https://github.com/user-attachments/assets/10e2f88b-aa8a-4205-b635-83675559b775" />
+
+
 ## Tech Stack
 - Snowflake -- cloud data warehouse (raw, staging, marts schemas)
 - SQL -- transformations, star schema, analytical marts
